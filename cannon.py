@@ -23,8 +23,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 200) / 12 # Cambiado de 25 a 12 para lanzar la bala mas rapido
+        speed.y = (y + 200) / 12 # Cambiado de 25 a 12 para lanzar la bala mas rapido
 
 
 def inside(xy):
@@ -55,7 +55,7 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 0.5
+        target.x -= 2.0 # Cambio de 0.5 a 2.0 para aumentar el desplazamiento 
 
          # Si el objetivo salió por la izquierda, reaparece a la derecha
         if not inside(target):
@@ -76,7 +76,7 @@ def move():
     draw()
 
 
-    ontimer(move, 50)
+    ontimer(move, 20) # Reduce el tiempo, se cambio de 50 a 20
 
 
 setup(420, 420, 370, 0)
